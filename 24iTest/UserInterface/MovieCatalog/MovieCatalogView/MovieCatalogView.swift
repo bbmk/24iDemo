@@ -36,6 +36,7 @@ class MovieCatalogView: SHNibDesignableView {
     @IBOutlet weak var tableView: UITableView?
     
     private var callbacks: Callbacks?
+    var onSelectedIndex: ((Int) -> Void)?
     private var model: Model = .init()
     let imageLoader = ImageLoader()
     
@@ -89,5 +90,9 @@ extension MovieCatalogView: UITableViewDataSource, UITableViewDelegate {
             }
         }
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.onSelectedIndex?(indexPath.row)
     }
 }

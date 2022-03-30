@@ -7,10 +7,22 @@
 
 import Foundation
 
+protocol MovieCatalogRoutingLogic {
+    func routeToMovieDetail(action: MovieCatalogModels.Action)
+}
+
 protocol MovieCatalogDataPassing {
     var dataStore: MovieCatalogDataStore? { get set }
 }
 
-class MovieCatalogRouter: MovieCatalogDataPassing {
+class MovieCatalogRouter: MovieCatalogDataPassing, MovieCatalogRoutingLogic {
+    weak var viewController: MovieCatalogViewController?
+    func routeToMovieDetail(action: MovieCatalogModels.Action) {
+     let vc = MovieDetailViewController()
+        vc.router?.dataStore?.movie = action.popularMovie
+        vc.router?.dataStore?.dataRepo = dataStore?.dataRepo
+        viewController?.navigationController?.pushViewController(vc, animated: true)
+    }
+    
     var dataStore: MovieCatalogDataStore?
 }

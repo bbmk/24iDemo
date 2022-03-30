@@ -60,6 +60,9 @@ struct Results: Codable {
         originalLanguage = try container.decodeIfPresent(String.self, forKey: .originalLanguage)
         title = try container.decodeIfPresent(String.self, forKey: .title)
         backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
+        if let path = backdropPath {
+            backdropPath = "https://image.tmdb.org/t/p/w500" + path
+        }
         voteAverage = try container.decodeIfPresent(Float.self, forKey: .voteAverage)
         popularity = try container.decodeIfPresent(Float.self, forKey: .popularity)
         id = try container.decodeIfPresent(Int.self, forKey: .id)

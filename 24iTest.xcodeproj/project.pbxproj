@@ -46,6 +46,10 @@
 		D7F1549D27F36097001623F1 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F1549C27F36097001623F1 /* NetworkManager.swift */; };
 		D7F154A427F44D7E001623F1 /* StarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F154A327F44D7E001623F1 /* StarView.swift */; };
 		D7F154A727F45A38001623F1 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F154A627F45A38001623F1 /* ImageLoader.swift */; };
+		D7F154A927F46054001623F1 /* MovieDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F154A827F46054001623F1 /* MovieDetailModels.swift */; };
+		D7F154AB27F46296001623F1 /* MovieDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F154AA27F46296001623F1 /* MovieDetailViewController.xib */; };
+		D7F154AD27F4639B001623F1 /* MovieDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7F154AC27F4639B001623F1 /* MovieDetailView.xib */; };
+		D7F154B427F4678E001623F1 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F154B327F4678E001623F1 /* MovieDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +113,10 @@
 		D7F1549C27F36097001623F1 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		D7F154A327F44D7E001623F1 /* StarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarView.swift; sourceTree = "<group>"; };
 		D7F154A627F45A38001623F1 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		D7F154A827F46054001623F1 /* MovieDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailModels.swift; sourceTree = "<group>"; };
+		D7F154AA27F46296001623F1 /* MovieDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailViewController.xib; sourceTree = "<group>"; };
+		D7F154AC27F4639B001623F1 /* MovieDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieDetailView.xib; sourceTree = "<group>"; };
+		D7F154B327F4678E001623F1 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,10 +245,13 @@
 		D7F1545A27F1E69A001623F1 /* MovieDetail */ = {
 			isa = PBXGroup;
 			children = (
+				D7F154AE27F463A2001623F1 /* MovieDetailView */,
 				D7F1545F27F1F694001623F1 /* MovieDetailViewController.swift */,
+				D7F154AA27F46296001623F1 /* MovieDetailViewController.xib */,
 				D7F1546127F1F813001623F1 /* MovieDetailInteractor.swift */,
 				D7F1546327F1F824001623F1 /* MovieDetailPresenter.swift */,
 				D7F1546527F1F83D001623F1 /* MovieDetailRouter.swift */,
+				D7F154A827F46054001623F1 /* MovieDetailModels.swift */,
 			);
 			path = MovieDetail;
 			sourceTree = "<group>";
@@ -303,6 +314,15 @@
 				D7F154A627F45A38001623F1 /* ImageLoader.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D7F154AE27F463A2001623F1 /* MovieDetailView */ = {
+			isa = PBXGroup;
+			children = (
+				D7F154AC27F4639B001623F1 /* MovieDetailView.xib */,
+				D7F154B327F4678E001623F1 /* MovieDetailView.swift */,
+			);
+			path = MovieDetailView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,7 +429,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7F154AB27F46296001623F1 /* MovieDetailViewController.xib in Resources */,
 				D7F1548027F309B5001623F1 /* MovieCatalogTableViewCell.xib in Resources */,
+				D7F154AD27F4639B001623F1 /* MovieDetailView.xib in Resources */,
 				D7F1548527F32F38001623F1 /* MovieCatalogViewController.xib in Resources */,
 				D7F1543127F1DABF001623F1 /* LaunchScreen.storyboard in Resources */,
 				D7F1542E27F1DABF001623F1 /* Assets.xcassets in Resources */,
@@ -458,6 +480,7 @@
 				D7F1546C27F1F998001623F1 /* MovieCatalogRouter.swift in Sources */,
 				D7F1546027F1F694001623F1 /* MovieDetailViewController.swift in Sources */,
 				D7F1546627F1F83D001623F1 /* MovieDetailRouter.swift in Sources */,
+				D7F154A927F46054001623F1 /* MovieDetailModels.swift in Sources */,
 				D7F1549727F34CAC001623F1 /* SpokenLanguages.swift in Sources */,
 				D7F1549B27F35247001623F1 /* NetworkDataService.swift in Sources */,
 				D7F1548C27F34B72001623F1 /* DataRepo.swift in Sources */,
@@ -468,6 +491,7 @@
 				D7F1549D27F36097001623F1 /* NetworkManager.swift in Sources */,
 				D7F1546A27F1F98C001623F1 /* MovieCatalogPresenter.swift in Sources */,
 				D7F1545627F1DB3B001623F1 /* PlayerView.swift in Sources */,
+				D7F154B427F4678E001623F1 /* MovieDetailView.swift in Sources */,
 				D7F1545E27F1F679001623F1 /* NetworkRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

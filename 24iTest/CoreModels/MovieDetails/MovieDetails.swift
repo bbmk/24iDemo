@@ -88,6 +88,9 @@ struct MovieDetails: Codable {
     adult = try container.decodeIfPresent(Bool.self, forKey: .adult)
     homepage = try container.decodeIfPresent(String.self, forKey: .homepage)
     backdropPath = try container.decodeIfPresent(String.self, forKey: .backdropPath)
+      if let path = backdropPath {
+          backdropPath = "https://image.tmdb.org/t/p/w500" + path
+      }
     releaseDate = try container.decodeIfPresent(String.self, forKey: .releaseDate)
     productionCompanies = try container.decodeIfPresent([ProductionCompanies].self, forKey: .productionCompanies)
     belongsToCollection = try container.decodeIfPresent(BelongsToCollection.self, forKey: .belongsToCollection)

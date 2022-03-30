@@ -9,11 +9,12 @@ import Foundation
 
 protocol MovieCatalogPresentationLogic {
     func presentSetup(response: MovieCatalogModels.Response)
+    func presentMovieCatalog(action: MovieCatalogModels.Action)
 }
 
 class MovieCatalogPresenter: MovieCatalogPresentationLogic {
+
     weak var viewController: MovieCatalogDisplayLogic?
-    
     func presentSetup(response: MovieCatalogModels.Response) {
         print(response)
         let items = response.popularMovies.compactMap { MovieCatalogView.Appearance(title: $0.title ?? ""
@@ -22,5 +23,8 @@ class MovieCatalogPresenter: MovieCatalogPresentationLogic {
                                                                                    ratings:Double(($0.voteAverage ?? 0.0) / 2))}
         let model = MovieCatalogView.Model(items: items)
         viewController?.displaySetup(viewModel: .init(model: model!))
+    }
+    func presentMovieCatalog(action: MovieCatalogModels.Action) {
+        viewController?.navigateToMovieDetails(action: action)
     }
 }
