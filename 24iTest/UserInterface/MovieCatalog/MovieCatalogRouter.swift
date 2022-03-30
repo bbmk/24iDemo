@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol MovieCatalogDataPassing {
+    var dataStore: MovieCatalogDataStore? { get set }
+}
+
+class MovieCatalogRouter: MovieCatalogDataPassing {
+    var dataStore: MovieCatalogDataStore?
+}

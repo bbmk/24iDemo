@@ -83,5 +83,3 @@ enum NetworkRouter {
         }
     }
 }
-
-
