@@ -22,4 +22,8 @@ class CashedDataService: DataService {
             onComplete(movieDetails)
         }
     }
+    
+    func getMovieVideos(movieId: String, onComplete: @escaping (MovieVideos) -> Void, onError: @escaping ErrorCompletion) {
+        //Cashing videos will ne to much for now
+    }
 }

@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window = UIWindow(frame: windowScene.coordinateSpace.bounds)
             window?.windowScene = windowScene
             let navigationVC = UINavigationController()
+            navigationVC.navigationBar.barTintColor = UIColor.gray
             window?.rootViewController = navigationVC
+        
             let controller = MovieCatalogViewController()
             controller.router?.dataStore?.dataRepo = DataRepo(networkData: NetworkDataService(), chashedData: CashedDataService())
             navigationVC.pushViewController(controller, animated: false)

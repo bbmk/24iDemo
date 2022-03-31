@@ -25,6 +25,7 @@ class MovieDetailView: SHNibDesignableView {
     
     private var model: Model?
     private let imageLoader = ImageLoader()
+    var onSelectedIndex: (() -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -50,5 +51,8 @@ class MovieDetailView: SHNibDesignableView {
             self?.imageView.image = image
         }
         
+    }
+    @IBAction func watchTrailerAction(_ sender: Any) {
+        onSelectedIndex?()
     }
 }

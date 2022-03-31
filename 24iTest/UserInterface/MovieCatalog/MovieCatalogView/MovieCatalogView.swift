@@ -64,6 +64,15 @@ class MovieCatalogView: SHNibDesignableView {
         self.tableView?.dataSource = self
         self.searchBar.delegate = self
         self.tableView?.reloadData()
+        self.tableView?.backgroundColor = .gray
+        self.searchBar.resignFirstResponder()
+        self.searchBar.searchTextField.textColor = .white
+        self.searchBar.searchTextField.clearButtonMode = .never
+        self.searchBar.searchTextField.backgroundColor = UIColor.clear
+        self.searchBar.barTintColor = .gray
+        self.searchBar.backgroundColor = .white
+        
+        
     }
     
     func set(model: Model) {
@@ -100,6 +109,7 @@ extension MovieCatalogView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.onSelectedIndex?(indexPath.row)
+        self.searchBar.resignFirstResponder()
     }
 }
 

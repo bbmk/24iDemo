@@ -10,10 +10,11 @@ import Foundation
 enum NetworkRouter {
     case getPopularMoviesList
     case getMovieDetails(movieId: String)
+    case getMovieVideos(movieId: String)
     
     var accessToken: String {
         switch self {
-        case .getPopularMoviesList, .getMovieDetails:
+        case .getPopularMoviesList, .getMovieDetails, .getMovieVideos:
             return "03a9dfd3c42397a31ca7ef7c0d4529fb"
         }
     }
@@ -33,7 +34,7 @@ enum NetworkRouter {
         // It can be easy adapted for multiple hosts
         let baseSport = "api.themoviedb.org"
         switch self {
-        case .getPopularMoviesList, .getMovieDetails:
+        case .getPopularMoviesList, .getMovieDetails, .getMovieVideos:
             return baseSport
         }
     }
@@ -48,6 +49,8 @@ enum NetworkRouter {
             return movieId
         case .getPopularMoviesList:
             return ""
+        case .getMovieVideos(let movieId):
+            return movieId
         }
     }
     
@@ -73,12 +76,14 @@ enum NetworkRouter {
             return "/3/movie/popular"
         case .getMovieDetails:
             return "/3/movie/" + stringParameters
+        case .getMovieVideos:
+            return "/3/movie/" + stringParameters + "/videos"
         }
     }
     
     var method: String {
         switch self {
-        case .getPopularMoviesList, .getMovieDetails:
+        case .getPopularMoviesList, .getMovieDetails, .getMovieVideos:
             return "GET"
         }
     }

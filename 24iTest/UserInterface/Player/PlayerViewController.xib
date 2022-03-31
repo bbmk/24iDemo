@@ -8,31 +8,31 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieCatalogViewController" customModule="_4iTest" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PlayerViewController" customModule="_4iTest" customModuleProvider="target">
             <connections>
-                <outlet property="movieCatalogView" destination="waL-lY-4ZG" id="2fi-s0-Th0"/>
-                <outlet property="view" destination="iN0-l3-epB" id="DTn-Ac-4fb"/>
+                <outlet property="playerView" destination="sT9-1g-aaz" id="a8H-uu-IdF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="waL-lY-4ZG" customClass="MovieCatalogView" customModule="_4iTest" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sT9-1g-aaz" customClass="YTPlayerView">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="waL-lY-4ZG" secondAttribute="trailing" id="5J5-yt-Dre"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="waL-lY-4ZG" secondAttribute="bottom" id="S6X-aM-n8I"/>
-                <constraint firstItem="waL-lY-4ZG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="U8R-Px-Tm1"/>
-                <constraint firstItem="waL-lY-4ZG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="lw7-VW-uAY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sT9-1g-aaz" secondAttribute="trailing" id="0zq-w7-Jfs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sT9-1g-aaz" secondAttribute="bottom" id="1l8-OC-bhZ"/>
+                <constraint firstItem="sT9-1g-aaz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="T93-c1-tLk"/>
+                <constraint firstItem="sT9-1g-aaz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="qrK-CU-GS1"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="140"/>
+            <point key="canvasLocation" x="139" y="84"/>
         </view>
     </objects>
     <resources>

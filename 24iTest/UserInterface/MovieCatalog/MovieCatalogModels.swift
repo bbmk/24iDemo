@@ -16,10 +16,10 @@ enum MovieCatalogModels {
     }
     
     struct Response {
-        let popularMovies: [Results]
+        let popularMovies: [Movies]
     }
     
     struct Action {
-        let popularMovie: Results
+        let popularMovie: Movies
     }
 }

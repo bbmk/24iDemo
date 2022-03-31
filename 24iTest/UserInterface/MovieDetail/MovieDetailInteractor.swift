@@ -9,16 +9,16 @@ import Foundation
 
 protocol MovieDetailBusinessLogic {
     func performSetup(request: MovieDetailModels.Request)
-    func handleSelection(item: Int)
+    func handleSelection()
 }
 
 protocol MovieDetailDataStore {
     var dataRepo: DataRepo? { get set }
-    var movie: Results? { get set }
+    var movie: Movies? { get set }
 }
 
 class MovieDetailInteractor: MovieDetailBusinessLogic, MovieDetailDataStore {
-    var movie: Results?
+    var movie: Movies?
     
     var dataRepo: DataRepo?
     
@@ -38,7 +38,15 @@ class MovieDetailInteractor: MovieDetailBusinessLogic, MovieDetailDataStore {
         }
     }
     
-    func handleSelection(item: Int) {
-        
+    func handleSelection() {
+        if let movie = movie, let movieId = movie.id {
+            dataRepo?.getMovieVideos(movieId: String(movieId), onComplete: { [weak self] movieVideos in
+                if let videoId = extractTrailerId(movieVideos: movieVideos) {
+                    self?.presenter?.presentVideo(videoId: videoId)
+                }
+            }, onError: { result in
+                
+            })
+        }
     }
 }

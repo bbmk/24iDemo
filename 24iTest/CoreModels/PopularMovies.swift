@@ -19,7 +19,7 @@ struct PopularMovies: Codable {
   var page: Int?
   var totalResults: Int?
   var totalPages: Int?
-  var results: [Results]?
+  var results: [Movies]?
 
 
 
@@ -28,7 +28,7 @@ struct PopularMovies: Codable {
     page = try container.decodeIfPresent(Int.self, forKey: .page)
     totalResults = try container.decodeIfPresent(Int.self, forKey: .totalResults)
     totalPages = try container.decodeIfPresent(Int.self, forKey: .totalPages)
-    results = try container.decodeIfPresent([Results].self, forKey: .results)
+    results = try container.decodeIfPresent([Movies].self, forKey: .results)
   }
 
 }

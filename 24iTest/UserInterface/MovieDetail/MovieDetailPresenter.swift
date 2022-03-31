@@ -9,9 +9,11 @@ import Foundation
 
 protocol MovieDetailPresentationLogic {
     func presentSetup(response: MovieDetailModels.Response)
+    func presentVideo(videoId: String)
 }
 
 class MovieDetailPresenter: MovieDetailPresentationLogic {
+
     weak var viewController: MovieDetailDisplayLogic?
     
     func presentSetup(response: MovieDetailModels.Response) {
@@ -22,5 +24,9 @@ class MovieDetailPresenter: MovieDetailPresentationLogic {
                                                                  detailsText: response.popularMovie.overview ?? "",
                                                                  details2Text: genres ?? "", detail3Text: response.popularMovie.releaseDate ?? ""))
         viewController?.displaySetup(viewModel: viewModel)
+    }
+    
+    func presentVideo(videoId: String) {
+        viewController?.navigateToPlayerView(videoID: videoId)
     }
 }

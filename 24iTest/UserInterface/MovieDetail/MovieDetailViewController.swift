@@ -10,14 +10,14 @@ import UIKit
 
 protocol MovieDetailDisplayLogic: AnyObject {
     func displaySetup(viewModel: MovieDetailModels.ViewModel)
+    func navigateToPlayerView(videoID: String)
 }
 
 class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
 
-    
     @IBOutlet weak var movieDetailView: MovieDetailView!
     private var interactor: MovieDetailBusinessLogic?
-    var router: MovieDetailDataPassing?
+    var router: (MovieDetailDataPassing & MovieDetailRoutingLogic)?
     
     init() {
         super.init(nibName: "MovieDetailViewController", bundle: nil)
@@ -42,6 +42,7 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
         
         self.interactor = interactor
         self.router = router
+        router.viewController = self
         
         router.dataStore = interactor
         interactor.presenter = presenter
@@ -50,5 +51,12 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
     
     func displaySetup(viewModel: MovieDetailModels.ViewModel) {
         movieDetailView.set(model: viewModel.model)
+        movieDetailView.onSelectedIndex = {
+            self.interactor?.handleSelection()
+        }
+    }
+    
+    func navigateToPlayerView(videoID: String) {
+        router?.routeToPlayer(videoId: videoID)
     }
 }

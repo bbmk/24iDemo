@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Results: Codable {
+struct Movies: Codable {
 
   enum CodingKeys: String, CodingKey {
     case adult

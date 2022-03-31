@@ -8,12 +8,13 @@
 import Foundation
 
 class NetworkDataService: DataService {
+
     func getPopularMovies(onComplete: @escaping (PopularMovies) -> Void, onError: @escaping ErrorCompletion) {
         NetworkService.request(router: NetworkRouter.getPopularMoviesList) {(popularMovies: PopularMovies) in
             encodeObject(object: popularMovies, path: "popularMovies")
             onComplete(popularMovies)
         } errorCompletion: { error in
-            
+            //TODO: Error handling
         }
 
     }
@@ -25,5 +26,14 @@ class NetworkDataService: DataService {
         } errorCompletion: { error in
     
         }
+    }
+    
+    func getMovieVideos(movieId: String, onComplete: @escaping (MovieVideos) -> Void, onError: @escaping ErrorCompletion) {
+        NetworkService.request(router: .getMovieVideos(movieId: movieId)) { (movieVideos: MovieVideos) in
+            onComplete(movieVideos)
+        } errorCompletion: { error in
+            
+        }
+
     }
 }
