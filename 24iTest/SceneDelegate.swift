@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             let navigationVC = UINavigationController()
             window?.rootViewController = navigationVC
             let controller = MovieCatalogViewController()
-            controller.router?.dataStore?.dataRepo = DataRepo(networkData: NetworkDataService(), chashedData: NetworkDataService())
+            controller.router?.dataStore?.dataRepo = DataRepo(networkData: NetworkDataService(), chashedData: CashedDataService())
             navigationVC.pushViewController(controller, animated: false)
             window?.makeKeyAndVisible()
     }

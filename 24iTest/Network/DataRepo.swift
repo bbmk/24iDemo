@@ -21,10 +21,19 @@ class DataRepo: DataService {
         self.chashedData = chashedData
     }
     func getPopularMovies(onComplete: @escaping (PopularMovies) -> Void, onError: @escaping ErrorCompletion) {
-        networkData.getPopularMovies(onComplete: onComplete, onError: onError)
+        if Reachability.isConnectedToNetwork() {
+            networkData.getPopularMovies(onComplete: onComplete, onError: onError)
+        }else {
+            chashedData.getPopularMovies(onComplete: onComplete, onError: onError)
+        }
     }
     
     func getMovieDetails(movieId: String, onComplete: @escaping (MovieDetails) -> Void, onError: @escaping ErrorCompletion) {
-        networkData.getMovieDetails(movieId: movieId, onComplete: onComplete, onError: onError)
+        if Reachability.isConnectedToNetwork() {
+            networkData.getMovieDetails(movieId: movieId, onComplete: onComplete, onError: onError)
+        } else {
+            chashedData.getMovieDetails(movieId: movieId, onComplete: onComplete, onError: onError)
+        }
+        
     }
 }

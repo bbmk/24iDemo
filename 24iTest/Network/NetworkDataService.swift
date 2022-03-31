@@ -7,9 +7,10 @@
 
 import Foundation
 
-struct NetworkDataService: DataService {
+class NetworkDataService: DataService {
     func getPopularMovies(onComplete: @escaping (PopularMovies) -> Void, onError: @escaping ErrorCompletion) {
         NetworkService.request(router: NetworkRouter.getPopularMoviesList) {(popularMovies: PopularMovies) in
+            encodeObject(object: popularMovies, path: "popularMovies")
             onComplete(popularMovies)
         } errorCompletion: { error in
             
@@ -19,6 +20,7 @@ struct NetworkDataService: DataService {
     
     func getMovieDetails(movieId: String, onComplete: @escaping (MovieDetails) -> Void, onError: @escaping ErrorCompletion) {
         NetworkService.request(router: NetworkRouter.getMovieDetails(movieId: movieId)) { (movieDetails: MovieDetails) in
+            encodeObject(object: movieDetails, path: movieId)
             onComplete(movieDetails)
         } errorCompletion: { error in
     
