@@ -19,13 +19,16 @@ class MovieCatalogView: SHNibDesignableView {
     
     struct Model {
         let items: [Appearance]
+        var searchItems: [Appearance]
         
         init?(items: [Appearance]) {
             self.items = items
+            self.searchItems = items
         }
         
         fileprivate init() {
             items = []
+            searchItems = []
         }
     }
     
@@ -35,9 +38,11 @@ class MovieCatalogView: SHNibDesignableView {
     
     @IBOutlet weak var tableView: UITableView?
     
+    @IBOutlet weak var searchBar: UISearchBar!
     private var callbacks: Callbacks?
     var onSelectedIndex: ((Int) -> Void)?
     private var model: Model = .init()
+    private var searching = false
     let imageLoader = ImageLoader()
     
     override init(frame: CGRect) {
@@ -57,6 +62,7 @@ class MovieCatalogView: SHNibDesignableView {
         self.tableView?.register(UINib(nibName: MovieCatalogTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: MovieCatalogTableViewCell.identifier)
         self.tableView?.delegate = self
         self.tableView?.dataSource = self
+        self.searchBar.delegate = self
         self.tableView?.reloadData()
     }
     
@@ -68,7 +74,7 @@ class MovieCatalogView: SHNibDesignableView {
 
 extension MovieCatalogView: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.model.items.count
+        return self.model.searchItems.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
@@ -79,7 +85,7 @@ extension MovieCatalogView: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        let item = model.items[indexPath.row]
+        let item = model.searchItems[indexPath.row]
         cell.titleLabel.text = item.title
         cell.starsView.rating = item.ratings
         cell.downLeftLabel.text = item.downLeftText
@@ -94,5 +100,21 @@ extension MovieCatalogView: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.onSelectedIndex?(indexPath.row)
+    }
+}
+
+extension MovieCatalogView: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        model.searchItems = model.items.filter { $0.title.lowercased().prefix(searchText.count) == searchText.lowercased() }
+        searching = true
+        tableView?.reloadData()
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searching = false
+        searchBar.text = ""
+        model.searchItems = model.items
+        tableView?.reloadData()
     }
 }

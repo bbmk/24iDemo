@@ -9,10 +9,10 @@ import Foundation
 
 class DataManager {
     
-    static let shared = DataManager(dataRepo: DataRepo(networkData: NetworkDataService(), chashedData: NetworkDataService()))
-    let dataRepo: DataRepo
-
-    private init(dataRepo: DataRepo) {
-        self.dataRepo = dataRepo
-    }
+//    static let shared = DataManager(dataRepo: DataRepo(networkData: NetworkDataService(), chashedData: NetworkDataService(), cashePopular: <#NSCache<NSString, PopularMovies>#>))
+//    let dataRepo: DataRepo
+//
+//    private init(dataRepo: DataRepo) {
+//        self.dataRepo = dataRepo
+//    }
 }
