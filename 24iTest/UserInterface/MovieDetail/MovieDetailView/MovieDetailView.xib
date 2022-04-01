@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_5" orientation="landscape" appearance="dark"/>
+    <device id="retina6_5" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -31,11 +31,11 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="YKl-Ue-P2y">
-            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yi0-Qk-JOU">
-                    <rect key="frame" x="44" y="0.0" width="414" height="240"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="240"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="414" id="0LZ-wI-o5k"/>
                         <constraint firstAttribute="height" constant="240" id="W2z-vF-IU5"/>
@@ -52,13 +52,13 @@
                     </variation>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3S-23-v5A">
-                    <rect key="frame" x="474" y="20" width="362" height="30"/>
+                    <rect key="frame" x="16" y="292" width="382" height="30"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IF-Vx-Ife">
-                    <rect key="frame" x="474" y="190" width="362" height="50"/>
+                    <rect key="frame" x="16" y="330" width="382" height="50"/>
                     <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="ACo-cw-N35"/>
@@ -73,43 +73,43 @@
                     </connections>
                 </button>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDR-lg-fS5">
-                    <rect key="frame" x="0.0" y="240" width="896" height="174"/>
+                    <rect key="frame" x="0.0" y="380" width="414" height="516"/>
                     <subviews>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fJU-LZ-eXm" userLabel="Content View">
-                            <rect key="frame" x="0.0" y="0.0" width="896" height="369.66666666666669"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="800"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZB6-y5-c6o">
-                                    <rect key="frame" x="24" y="63" width="848" height="21"/>
+                                    <rect key="frame" x="24" y="63" width="366" height="21"/>
                                     <fontDescription key="fontDescription" name="Glober-Bold" family="Glober" pointSize="18"/>
                                     <color key="textColor" systemColor="systemYellowColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="11" translatesAutoresizingMaskIntoConstraints="NO" id="J8M-Ht-zGh">
-                                    <rect key="frame" x="24" y="92" width="848" height="0.0"/>
+                                    <rect key="frame" x="24" y="92" width="366" height="0.0"/>
                                     <fontDescription key="fontDescription" name="Glober-SemiBold" family="Glober" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SeH-LY-bu3">
-                                    <rect key="frame" x="24" y="100" width="848" height="21"/>
+                                    <rect key="frame" x="24" y="100" width="366" height="21"/>
                                     <fontDescription key="fontDescription" name="Glober-Bold" family="Glober" pointSize="18"/>
                                     <color key="textColor" systemColor="systemYellowColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="itN-TI-zXf">
-                                    <rect key="frame" x="24" y="129" width="848" height="0.0"/>
+                                    <rect key="frame" x="24" y="129" width="366" height="0.0"/>
                                     <fontDescription key="fontDescription" name="Glober-Regular" family="Glober" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview: " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iif-UX-CoQ">
-                                    <rect key="frame" x="24" y="137" width="848" height="21"/>
+                                    <rect key="frame" x="24" y="137" width="366" height="21"/>
                                     <fontDescription key="fontDescription" name="Glober-Bold" family="Glober" pointSize="18"/>
                                     <color key="textColor" systemColor="systemYellowColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="95Z-w5-MhV">
-                                    <rect key="frame" x="24" y="166" width="848" height="21"/>
+                                    <rect key="frame" x="24" y="166" width="366" height="21"/>
                                     <fontDescription key="fontDescription" name="Glober-Regular" family="Glober" pointSize="18"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -183,6 +183,7 @@
                     <exclude reference="Y78-wT-KPJ"/>
                     <exclude reference="5DI-Pv-INa"/>
                     <exclude reference="7QH-Yz-T24"/>
+                    <exclude reference="V4g-4C-e2g"/>
                     <exclude reference="fXn-8w-oGm"/>
                 </mask>
             </variation>
@@ -200,6 +201,11 @@
                     <include reference="Y78-wT-KPJ"/>
                     <include reference="7QH-Yz-T24"/>
                     <include reference="fXn-8w-oGm"/>
+                </mask>
+            </variation>
+            <variation key="widthClass=regular">
+                <mask key="constraints">
+                    <include reference="V4g-4C-e2g"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="-286.95652173913044" y="-581.25"/>
