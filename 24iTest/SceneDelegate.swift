@@ -17,7 +17,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             window = UIWindow(frame: windowScene.coordinateSpace.bounds)
             window?.windowScene = windowScene
             let navigationVC = UINavigationController()
-            navigationVC.navigationBar.barTintColor = UIColor.gray
+//            navigationVC.navigationBar.barTintColor = UIColor.gray
+//            UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().customNavigationBar()
             window?.rootViewController = navigationVC
         
             let controller = MovieCatalogViewController()

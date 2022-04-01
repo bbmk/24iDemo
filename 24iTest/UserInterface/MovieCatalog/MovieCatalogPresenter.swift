@@ -16,7 +16,6 @@ class MovieCatalogPresenter: MovieCatalogPresentationLogic {
 
     weak var viewController: MovieCatalogDisplayLogic?
     func presentSetup(response: MovieCatalogModels.Response) {
-        print(response)
         let items = response.popularMovies.compactMap { MovieCatalogView.Appearance(title: $0.title ?? ""
                                                                                    , downLeftText: $0.releaseDate ?? "",
                                                                                    downRightText: $0.originalLanguage ?? "", image: $0.posterPath ?? "",

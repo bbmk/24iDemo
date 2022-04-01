@@ -33,6 +33,7 @@ class MovieDetailViewController: UIViewController, MovieDetailDisplayLogic {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
         interactor?.performSetup(request: .init())
+        self.title = "Movie Details" // need to be localized
     }
     
     private func setup() {

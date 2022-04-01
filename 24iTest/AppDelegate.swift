@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
+        UINavigationBar.appearance().customNavigationBar()
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
 
@@ -33,5 +34,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 
+}
+
+extension UINavigationBar {
+    func customNavigationBar() {
+        // color for button images, indicators and etc.
+        self.tintColor = UIColor.systemYellow
+
+        // color for background of navigation bar
+        // but if you use larget titles, then in viewDidLoad must write
+        // navigationController?.view.backgroundColor = // your color
+        self.barTintColor = .systemYellow
+    //    self.isTranslucent = false
+
+        // for larget titles
+      //  self.prefersLargeTitles = true
+
+        // color for large title label
+      //  self.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+
+        // color for standard title label
+        self.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.systemYellow]
+
+        // remove bottom line/shadow
+        self.setBackgroundImage(UIImage(), for: .default)
+        self.shadowImage = UIImage()
+    }
 }
 

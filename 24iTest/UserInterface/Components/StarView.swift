@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-
+// Doesn't look very good but it's the only one that doesn't requried pods 
 class StarsView: UIView {
 
     @IBInspectable var rating: Double = 5.0 {

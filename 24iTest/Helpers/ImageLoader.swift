@@ -45,6 +45,7 @@ class ImageLoader {
                 if let data = try? Data(contentsOf: url) {
                     let img: UIImage! = UIImage(data: data)
                     self.cache.setObject(img, forKey: imagePath as NSString)
+                    //Sould be saved in coreData
                     self.saveImage(imageName: imgName!, image: img)
                     DispatchQueue.main.async {
                         completionHandler(img)

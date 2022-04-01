@@ -29,7 +29,7 @@ func decodeObject<T: Codable>(object: T.Type, path: String) -> T? {
             // Create JSON Decoder
             let decoder = JSONDecoder()
             
-            // Decode Note
+    
             let note = try decoder.decode(T.self, from: data)
             return note
             

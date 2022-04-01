@@ -11,7 +11,7 @@ enum NetworkRouter {
     case getPopularMoviesList
     case getMovieDetails(movieId: String)
     case getMovieVideos(movieId: String)
-    
+    //should be stored in keychain !!
     var accessToken: String {
         switch self {
         case .getPopularMoviesList, .getMovieDetails, .getMovieVideos:

@@ -22,6 +22,7 @@ class MovieDetailView: SHNibDesignableView {
     
     @IBOutlet weak var details2Label: UILabel!
     @IBOutlet weak var details3Label: UILabel!
+    @IBOutlet weak var button: UIButton!
     
     private var model: Model?
     private let imageLoader = ImageLoader()
@@ -30,7 +31,6 @@ class MovieDetailView: SHNibDesignableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         viewDidLoadFromNib()
-        scrollView.contentSize = CGSize(width: self.frame.size.width, height: 600)
     }
     
     required init?(coder: NSCoder) {
@@ -39,6 +39,10 @@ class MovieDetailView: SHNibDesignableView {
     
     override func viewDidLoadFromNib() {
         self.backgroundColor = .gray
+        button.layer.borderWidth = 2
+        button.layer.borderColor = UIColor.systemYellow.cgColor
+//        scrollView.contentSize = CGSize(width: self.frame.size.width, height: 600)
+
     }
     
     func set(model: Model) {

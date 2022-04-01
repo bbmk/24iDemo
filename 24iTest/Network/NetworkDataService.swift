@@ -11,6 +11,7 @@ class NetworkDataService: DataService {
 
     func getPopularMovies(onComplete: @escaping (PopularMovies) -> Void, onError: @escaping ErrorCompletion) {
         NetworkService.request(router: NetworkRouter.getPopularMoviesList) {(popularMovies: PopularMovies) in
+            //Should be used coreData, for this demo I am saving it in UserDeafult
             encodeObject(object: popularMovies, path: "popularMovies")
             onComplete(popularMovies)
         } errorCompletion: { error in

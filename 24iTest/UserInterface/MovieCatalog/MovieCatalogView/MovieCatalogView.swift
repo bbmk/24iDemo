@@ -71,6 +71,7 @@ class MovieCatalogView: SHNibDesignableView {
         self.searchBar.searchTextField.backgroundColor = UIColor.clear
         self.searchBar.barTintColor = .gray
         self.searchBar.backgroundColor = .white
+        searchBar.searchTextField.leftView?.tintColor = .white
         
         
     }

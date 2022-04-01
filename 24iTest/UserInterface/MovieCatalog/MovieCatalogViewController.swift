@@ -32,6 +32,7 @@ class MovieCatalogViewController: UIViewController, MovieCatalogDisplayLogic {
         super.viewDidLoad()
         self.view.backgroundColor = .gray
         interactor?.performSetup(request: .init())
+        self.title = "Movie Catalog" //Should be localized in real project :)
     }
     
     private func setup() {
